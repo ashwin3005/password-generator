@@ -1,28 +1,43 @@
-let alpha = 'abcdefghijklmnopqrstuvwxyz';
+const alpha = 'abcdefghijklmnopqrstuvwxyz';
+const upAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const num = '0123456789'
+const symbols = `!@#$%^&*`
+
 let password = '';
 
+let len = prompt("Enter length of your password ")
+//let len = document.getElementById("length").value;
+
+function randomElement(parameter){
+    const r = parameter[Math.floor(Math.random() * parameter.length)];
+    return r
+}
 
 // generating 8 digit password
-for(let i=0; i<=7; i++){
+for(let i=0; i<=len-1; i++){
 
-    // random number between 0 to 25 for indexing
-    let n = Math.random() * 26;
-    n = Math.floor(n)
+// random number between 0 to 25 for indexing
+let n = Math.random() * 26;
+n = Math.floor(n)
 
-    // alphabet or number
-    const alnum = ["a","n"];
-    const randomElement = alnum[Math.floor(Math.random() * alnum.length)];
+// alphabet or number
+const alnum = ["a","n","u","s"];
+const type = alnum[Math.floor(Math.random() * alnum.length)];
 
-    // random numer between 0 to 9
-    let rannum = Math.random() * 10;
-    rannum = Math.floor(rannum)
+if(type == "a"){
+    password+=randomElement(alpha); 
+}
+else if(type == "n"){
+    password+=randomElement(num);
+}
+else if(type == "u"){
+    password+=randomElement(upAlpha);
+}
+else if(type == "s"){
+    password+=randomElement(symbols);
+}
 
-    if(randomElement == "a"){
-        password+=alpha[n]; 
-    }else{
-        password+=rannum;
-    }
-           
+        
 }
 let header = document.querySelector("h1");
 header.innerText = `Random Password: ${password}`;
