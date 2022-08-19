@@ -25,16 +25,16 @@ export default function generatePassword(length){
     const alnum = ["a","n","u","s"];
     const type = alnum[Math.floor(Math.random() * alnum.length)];
 
-    if(type == "a"){
+    if(type === "a"){
         password+=randomElement(alpha); 
     }
-    else if(type == "n"){
+    else if(type === "n"){
         password+=randomElement(num);
     }
-    else if(type == "u"){
+    else if(type === "u"){
         password+=randomElement(upAlpha);
     }
-    else if(type == "s"){
+    else if(type === "s"){
         password+=randomElement(symbols);
     }
 
