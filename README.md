@@ -1,3 +1,3 @@
 # password-generator 
 
-Simple password generator made with reactJS.
+Simple password generator made with reactJS. 
