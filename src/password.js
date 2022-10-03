@@ -6,37 +6,36 @@ const symbols = `!@#$%^&*`
 export default function generatePassword(length){
     let password = '';
 
-    //let len = prompt("Enter length of your password ")
-    //let len = document.getElementById("length").value;
 
-    function randomElement(parameter){
+    // picks a random element from a string.
+    function pickRandomElement(parameter){
         const r = parameter[Math.floor(Math.random() * parameter.length)];
         return r
     }
 
-    // generating 8 digit password
+    // generating password of <length> digits
     for(let i=0; i<=length-1; i++){
 
-    // random number between 0 to 25 for indexing
-    let n = Math.random() * 26;
-    n = Math.floor(n)
+        // random number between 0 to 25 for indexing
+        let n = Math.random() * 26;
+        n = Math.floor(n)
 
-    // alphabet or number
-    const alnum = ["a","n","u","s"];
-    const type = alnum[Math.floor(Math.random() * alnum.length)];
+        // alphabet or number
+        const listOfTypes = ["al","num","up_al","sym"];
+        const type = listOfTypes[Math.floor(Math.random() * listOfTypes.length)];
 
-    if(type === "a"){
-        password+=randomElement(alpha); 
-    }
-    else if(type === "n"){
-        password+=randomElement(num);
-    }
-    else if(type === "u"){
-        password+=randomElement(upAlpha);
-    }
-    else if(type === "s"){
-        password+=randomElement(symbols);
-    }
+        if(type === "al"){
+            password+=pickRandomElement(alpha); 
+        }
+        else if(type === "num"){
+            password+=pickRandomElement(num);
+        }
+        else if(type === "up_al"){
+            password+=pickRandomElement(upAlpha);
+        }
+        else if(type === "sym"){
+            password+=pickRandomElement(symbols);
+        }
 
             
     }
