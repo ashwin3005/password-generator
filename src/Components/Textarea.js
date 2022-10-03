@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import generatePassword from "./password";
+import generatePassword from "../password";
 
 export default function Textarea() {
   const [password, setPassword] = useState(null);
