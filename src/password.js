@@ -1,14 +1,38 @@
-export default function generatePassword(length){
+const alpha = 'abcdefghijklmnopqrstuvwxyz';
+const upAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+const num = '0123456789'
+const symbols = `!@#$%^&*`
+
+export default function generatePassword(length , setting){
     let password = '';
-    
+    const listOfTypes = ["al"];
+    if(setting.upperCase === true)
+    listOfTypes.push("up_al");
+    if(setting.symbol ===true)
+    listOfTypes.push("sym");
+    if(setting.number === true)
+    listOfTypes.push("num");
+  
     // generating password of <length> digits
     for(let i=0; i<=length-1; i++){
 
         // alphabet or number
-        const listOfTypes = ["abcdefghijklmnopqrstuvwxyz","ABCDEFGHIJKLMNOPQRSTUVWXYZ","0123456789",`!@#$%^&*`];
-        const word = listOfTypes[Math.floor(Math.random() * listOfTypes.length)];
-        
-        password+=pickRandomElement(word);
+
+        const type = listOfTypes[Math.floor(Math.random() * listOfTypes.length)];
+
+        if(type === "al"){
+            password+=pickRandomElement(alpha); 
+        }
+        else if(type === "num"){
+            password+=pickRandomElement(num);
+        }
+        else if(type === "up_al"){
+            password+=pickRandomElement(upAlpha);
+        }
+        else if(type === "sym"){
+            password+=pickRandomElement(symbols);
+        }
+
 
     }
 
