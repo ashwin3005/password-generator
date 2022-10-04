@@ -3,7 +3,7 @@ const upAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 const num = '0123456789'
 const symbols = `!@#$%^&*`
 
-export default function generatePassword(length){
+export default function generatePassword(length , setting){
     let password = '';
 
 
@@ -21,7 +21,15 @@ export default function generatePassword(length){
         n = Math.floor(n)
 
         // alphabet or number
-        const listOfTypes = ["al","num","up_al","sym"];
+        const listOfTypes = ["al"];
+        if(setting.upperCase === true)
+        listOfTypes.push("up_al");
+        if(setting.symbol ===true)
+        listOfTypes.push("sym");
+        if(setting.number === true)
+        listOfTypes.push("num");
+
+
         const type = listOfTypes[Math.floor(Math.random() * listOfTypes.length)];
 
         if(type === "al"){
