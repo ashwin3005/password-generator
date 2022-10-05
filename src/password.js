@@ -4,22 +4,25 @@ const num = '0123456789'
 const symbols = `!@#$%^&*`
 
 export default function generatePassword(length , setting){
-    let password = '';
-    const listOfTypes = ["al"];
-    if(setting.upperCase === true)
-    listOfTypes.push("up_al");
-    if(setting.symbol ===true)
-    listOfTypes.push("sym");
+    let array=[];
+    for(let i=0;i<4;i++){
+
+        let password = '';
+        const listOfTypes = ["al"];
+        if(setting.upperCase === true)
+        listOfTypes.push("up_al");
+        if(setting.symbol ===true)
+        listOfTypes.push("sym");
     if(setting.number === true)
     listOfTypes.push("num");
-  
+    
     // generating password of <length> digits
     for(let i=0; i<=length-1; i++){
-
+        
         // alphabet or number
-
+        
         const type = listOfTypes[Math.floor(Math.random() * listOfTypes.length)];
-
+        
         if(type === "al"){
             password+=pickRandomElement(alpha); 
         }
@@ -32,14 +35,18 @@ export default function generatePassword(length , setting){
         else if(type === "sym"){
             password+=pickRandomElement(symbols);
         }
-
-
+        
+        
     }
-
-    return password;
+    console.log(password)
+    array.push(password);
+   }
+   console.log(array);
+   return array
 }
 
 function pickRandomElement(parameter){
     const r = parameter[Math.floor(Math.random() * parameter.length)];
     return r
 }
+
