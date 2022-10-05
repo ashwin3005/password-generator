@@ -3,6 +3,7 @@ import generatePassword from "../password";
 import CopyButton from "./CopyButton";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
+import Tips from "./Tips";
 
 
 
@@ -70,6 +71,7 @@ export default function Textarea() {
             {password && <CopyButton password={password}/>}
           </div>
         </div>
-      </div>
+        <Tips/>
+        </div>
   );
 }
