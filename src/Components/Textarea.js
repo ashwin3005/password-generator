@@ -5,7 +5,6 @@ import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
 
 
-
 export default function Textarea() {
   const [password, setPassword] = useState(null);
   const [length, setLength] = useState(8);
@@ -57,7 +56,7 @@ export default function Textarea() {
                 <h5>Please click generate button to generate new password</h5>
               ) : <PasswordDisplay password={password}/>}
             </div>
-
+            
             <button
               onClick={() => setPassword(generatePassword(length,setting))}
               type="button"
