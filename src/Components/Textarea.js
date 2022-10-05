@@ -3,6 +3,7 @@ import generatePassword from "../password";
 import CopyButton from "./CopyButton";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
+import '../styles.css'
 
 
 
@@ -19,17 +20,17 @@ export default function Textarea() {
   
 
   return (
-      <div className="container d-flex flex-column h-100 justify-content-center align-items-center mt-4">
-        <div className="card text-center">
+      <div style={{backgroundColor: '#dedede', height: '100vh', width: '100vw'}} className="d-flex flex-column justify-content-center align-items-center">
+        <div className="card text-center" style={{backgroundColor: '#67C4A7', color: '#ffffff', borderRadius: '10px'}}>
           <div className="card-header">
             <h1 className="text-center">Random Password Generator</h1>
           </div>
-          <div className="card-body d-flex flex-column justify-content-center align-items-center">
+          <div style={{backgroundColor: '#fefefe',margin: '0 10px',borderRadius:'7px', color: '#67C4A7'}} className="card-body d-flex flex-column justify-content-center align-items-center">
             <div className="d-flex flex-column w-50">
               <label className="form-label" htmlFor="customRange1">
                 Password Length (8-32) :
                 <span
-                  className="p-2 text-primary fs-5 font-weight-bold "
+                  className="p-2 fs-5 font-weight-bold "
                   id="amount"
                   name="amount"
                   htmlFor="rangeInput"
@@ -61,7 +62,8 @@ export default function Textarea() {
             <button
               onClick={() => setPassword(generatePassword(length,setting))}
               type="button"
-              className="btn btn-primary"
+              className="btn"
+              style={{backgroundColor: '#67C4A7', color: '#ffffff'}}
             >
               Generate
             </button>
