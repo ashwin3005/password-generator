@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import generatePassword from "../password";
-import CopyButton from "./CopyButton";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
 import Tips from "./Tips";
@@ -54,20 +53,17 @@ export default function Textarea() {
             </div>
             <div className="d-flex flex-column justify-content-center align-items-center">
               {password == null ? (
-                <h5>Please click generate button to generate new password</h5>
+                <h5 className="py-2 pt-3">Click generate button for a new password</h5>
               ) : <PasswordDisplay password={password}/>}
             </div>
             
             <button
               onClick={() => setPassword(generatePassword(length,setting))}
               type="button"
-              className="btn btn-primary"
+              className="btn btn-primary btn-lg"
             >
               Generate
             </button>
-          </div>
-          <div className="card-footer text-muted">
-            {password && <CopyButton password={password}/>}
           </div>
         </div>
         <Tips/>
