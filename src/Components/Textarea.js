@@ -66,6 +66,8 @@ export default function Textarea() {
             </button>
           </div>
         </div>
+        <br/>
+        <br/>
         <Tips/>
         </div>
   );
