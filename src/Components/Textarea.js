@@ -65,6 +65,13 @@ export default function Textarea() {
             >
               Generate
             </button>
+            <button
+              onClick={() => setPassword(null)}
+              type="button"
+              className="btn btn-primary m-2"
+            >
+              Reset
+            </button>
           </div>
           <div className="card-footer text-muted">
             {password && <CopyButton password={password}/>}
