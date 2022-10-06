@@ -29,12 +29,16 @@ const PasswordDisplay = (props) => {
           id="copyTarget"
           class="form-control text-primary fs-3 fw-bold font-monospace"
           value={copied ? "Copied" : props.password}
+          ref={(node) => {
+            if (node) node.style.setProperty("color", copied? "#05a603":"#0d6efd", "important");
+          }}
           readonly
         />
         <span
           id="copyButton"
           class="btn btn-primary d-flex flex-column justify-content-center align-items-center"
           title="Click to copy"
+          style={{backgroundColor:(copied? "#05a603":"#0d6efd"),borderColor:(copied? "#05a603":"#0d6efd")}}
           onClick={copyToClipboard}
         >
           {copied ? (
