@@ -28,7 +28,7 @@ const PasswordDisplay = (props) => {
           type="text"
           id="copyTarget"
           class="form-control text-primary fs-3 fw-bold font-monospace"
-          value={copied ? "Password copied..." : props.password}
+          value={copied ? "Copied" : props.password}
           readonly
         />
         <span
@@ -43,11 +43,10 @@ const PasswordDisplay = (props) => {
               width="30"
               height="30"
               fill="currentColor"
-              class="bi bi-clipboard-check-fill"
-              viewBox="0 0 16 16"
+              class="bi bi-check-lg"
+              viewBox="0 0 17 16"
             >
-              <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z" />
-              <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z" />
+              <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
             </svg>
           ) : (
             <svg
@@ -55,14 +54,10 @@ const PasswordDisplay = (props) => {
               width="30"
               height="30"
               fill="currentColor"
-              class="bi bi-clipboard-fill"
-              viewBox="0 0 16 16"
+              viewBox="0 0 46 48"
             >
-              <path
-                fill-rule="evenodd"
-                d="M10 1.5a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-1Zm-5 0A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5v1A1.5 1.5 0 0 1 9.5 4h-3A1.5 1.5 0 0 1 5 2.5v-1Zm-2 0h1v1A2.5 2.5 0 0 0 6.5 5h3A2.5 2.5 0 0 0 12 2.5v-1h1a2 2 0 0 1 2 2V14a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V3.5a2 2 0 0 1 2-2Z"
-              />
-            </svg>
+              <path d="M8.75 45.15q-1.6 0-2.775-1.175Q4.8 42.8 4.8 41.2V11.3h3.95v29.9H32.2v3.95Zm7-6.95q-1.65 0-2.825-1.175Q11.75 35.85 11.75 34.2V6.7q0-1.6 1.175-2.775Q14.1 2.75 15.75 2.75h21.5q1.6 0 2.775 1.175Q41.2 5.1 41.2 6.7v27.5q0 1.65-1.175 2.825Q38.85 38.2 37.25 38.2Zm0-4h21.5V6.7h-21.5v27.5Zm0 0V6.7v27.5Z"/>
+              </svg>
           )}
         </span>
       </div>
