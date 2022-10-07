@@ -9,6 +9,7 @@ export default function Textarea() {
   const [length, setLength] = useState(8);
   const [rangeOutput, setrangeOutput] = useState(8);
   const [setting, setSetting] = useState({
+    lowercase: true,
     upperCase: false,
     number: false,
     symbol: false,
@@ -27,10 +28,11 @@ export default function Textarea() {
         <div className="card-body d-flex flex-column justify-content-center align-items-center">
           <div className="d-flex flex-column w-50">
             <label
-              className="form-label d-flex flex-row align-items-center"
+              className="form-label d-flex flex-row align-items"
               htmlFor="customRange1"
             >
               <span>Password Length (8-32) :</span>
+              &nbsp;&nbsp;&nbsp;
               <input
                 className="p-2 text-primary fs-5 font-weight-bold w-25 h-25"
                 id="amount"
