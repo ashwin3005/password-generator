@@ -45,7 +45,7 @@ const StrengthChecker = (props) => {
             <div className='progress' style={{height:'7px',width:'100%',backgroundColor:'#ccc',borderRadius:'8px'}}>
                 <div className='progress-bar' style={progressBarStyle()}></div>
             </div>
-            <p style={{color:progressColor(),textAlign:'right'}}>{checkLabel()}</p>
+            <p style={{color:progressColor(),textAlign:'right'}}>password strength:&nbsp;&nbsp;&nbsp;{checkLabel()}</p>
         </>
     )
 }
