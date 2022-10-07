@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import Textarea from "./Components/Textarea.jsx";
+import Textarea from "./Components/Textarea.js";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
