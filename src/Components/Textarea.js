@@ -25,7 +25,7 @@ export default function Textarea() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className={theme}>
-        <div className="container d-flex flex-column h-100 justify-content-center align-items-center mt-4">
+        <div className="container d-flex flex-column h-100 justify-content-center align-items-center">
           <ThemeToggle />
           <div className="card text-center">
             <div className="card-header">
