@@ -1,48 +1,53 @@
 /* CONTAINERS */
 
-.dark{
-    background-color: #15202b;
+.dark {
+  background-color: #15202b;
 }
 
-.dark div{
-    background-color: #15202b;
+.dark div {
+  background-color: #15202b;
 }
 
 .card {
-    border: solid 1px #8899A6;
+  border: solid 1px #8899a6;
 }
 
 .dark .card-header {
-    background-color: #22303C;
-    border-bottom: solid 1px #8899A6;
+  background-color: #22303c;
+  border-bottom: solid 1px #8899a6;
 }
 
 /* TEXT */
 
 .dark h1 {
-    color: white;
+  color: white;
 }
 
-.dark label, .dark h5 {
-    color: #8899A6;
+.dark label,
+.dark h5 {
+  color: #8899a6;
 }
 
 /* FORM */
-.dark input{
-    background-color: #8899A6;
+.dark input {
+  background-color: #8899a6;
 }
 
 .dark #amount {
-    background-color: #22303C;
+  background-color: #22303c;
+}
+
+.dark #copyTarget {
+  background-color: #22303c;
+  color:white;
 }
 
 /* TOGGLE */
 
-div.toggle{
-    margin-top: .5em;
-    margin-bottom: .5em;
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
+div.toggle {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
 }
-
