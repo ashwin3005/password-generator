@@ -33,6 +33,8 @@ If you want to contribute please read the guidelines in [CONTRIBUTING.MD](INSERT
 [CODE_OF_CONDUCT.MD](INSERT-YOUR-CODE_OF_CONDUCT.MD-LINK)
 -->
 
+## License
+[MIT LICENSE](LICENSE)
 
 ## Credits
 Reference: </br>
