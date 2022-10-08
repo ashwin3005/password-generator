@@ -1,18 +1,48 @@
-
+/* CONTAINERS */
 
 .dark{
-    background-color: #22303C;
+    background-color: #15202b;
 }
 
 .dark div{
-    background-color: aqua;
+    background-color: #15202b;
 }
 
-/* h1, label{
+.card {
+    border: solid 1px #8899A6;
+}
+
+.dark .card-header {
+    background-color: #22303C;
+    border-bottom: solid 1px #8899A6;
+}
+
+/* TEXT */
+
+.dark h1 {
     color: white;
 }
 
-body, div{
-    background-color: #15202b;
-} */
+.dark label, .dark h5 {
+    color: #8899A6;
+}
+
+/* FORM */
+.dark input{
+    background-color: #8899A6;
+}
+
+.dark #amount {
+    background-color: #22303C;
+}
+
+/* TOGGLE */
+
+div.toggle{
+    margin-top: .5em;
+    margin-bottom: .5em;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
 
