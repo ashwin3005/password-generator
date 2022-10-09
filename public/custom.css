@@ -2,6 +2,7 @@
 
 .dark {
   background-color: #15202b;
+  min-height: 100vh;
 }
 
 .dark div {
