@@ -5,7 +5,7 @@ const CheckBox = (props) => {
   const setSetting =  props.setSetting;
   const setting = props.setting;
   const id = props.id;
-
+  const checkboxValue = id==="lowercase"?"true":"";
   const handleChange = (event)=>{
     setting[id] = event.target.checked;
     setSetting(setting);  //why this doesn't do shit
@@ -15,6 +15,7 @@ const CheckBox = (props) => {
     <input
       className="form-check-input"
       type="checkbox"
+      defaultChecked={checkboxValue}
       value=""
       id="flexCheckDefault"
       onChange={handleChange}
