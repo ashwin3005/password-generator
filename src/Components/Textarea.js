@@ -91,9 +91,16 @@ export default function Textarea() {
               <button
                 onClick={() => setPassword(generatePassword(length, setting))}
                 type="button"
-                className="btn btn-primary btn-lg"
+                className="btn btn-primary m-2 btn-lg"
               >
+              
                 Generate
+              </button>
+              <button
+                onClick={() => {setPassword(null)}}
+                type="button"
+                className="btn btn-primary btn-lg m-2"
+              ><img src="https://user-images.githubusercontent.com/96253622/194433702-d5aff160-cad3-495c-b88f-daa94d65bb03.png" alt="" />
               </button>
             </div>
           </div>
