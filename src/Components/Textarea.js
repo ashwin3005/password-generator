@@ -5,14 +5,14 @@ import CheckBoxes from "./CheckBoxes";
 import Tips from "./Tips";
 import ThemeToggle from "./ThemeToggle";
 import { ThemeContext } from "./Context/Theme";
-import {Button,Dialog,DialogActions,DialogContent,DialogContentText,DialogTitle} from "@mui/material"
+import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material"
 
 export default function Textarea() {
   const [theme, setTheme] = useState("light");
   const [password, setPassword] = useState(null);
   const [length, setLength] = useState(8);
   const [rangeOutput, setrangeOutput] = useState(8);
-  const [open,setOpen] =useState(false);
+  const [open, setOpen] = useState(false);
   const [setting, setSetting] = useState({
     lowercase: true,
     upperCase: false,
@@ -23,23 +23,23 @@ export default function Textarea() {
     setLength(document.getElementById("rangeInput").value);
     setrangeOutput(document.getElementById("rangeInput").value);
   }
-  
+
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className={theme}>
         <div className="container d-flex flex-column h-100 justify-content-center align-items-center">
           <ThemeToggle />
           <div className="card text-center">
-                  <Dialog open={open} onClose={ ()=>setOpen(false)}>
-            <DialogTitle> Error</DialogTitle>
-            <DialogContent>
-              <DialogContentText>
-                Please enter length between 8-32
-              </DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={() => setOpen(false)}>Cancel</Button>
-            </DialogActions> 
+            <Dialog open={open} onClose={() => setOpen(false)}>
+              <DialogTitle> Error</DialogTitle>
+              <DialogContent>
+                <DialogContentText>
+                  Please enter length between 8-32
+                </DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button onClick={() => setOpen(false)}>Cancel</Button>
+              </DialogActions>
             </Dialog>
             <div className="card-header">
               <h1 className="text-center">Random Password Generator</h1>
@@ -66,8 +66,12 @@ export default function Textarea() {
                     }}
                     onBlur={(e) => {
                       let value = parseInt(e.target.value);
-                      
-                      {if(value <8 || value >32 )   setOpen(true); }               
+    // eslint-disable-next-line
+                      {
+                        if (value < 8 || value > 32){
+                          setOpen(true);
+                        }
+                      }
                       setLength(value);
                       setrangeOutput(value);
                     }}
