@@ -1,4 +1,4 @@
-import React, { useState, useRef  } from "react";
+import React, { useState } from "react";
 import generatePassword from "../password";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
@@ -80,7 +80,8 @@ export default function Textarea() {
                       setrangeOutput(e.target.value);
                     }}
                     onBlur={(e) => {
-                      let value = parseInt(e.target.value);                 
+                      let value = parseInt(e.target.value);    
+                      // eslint-disable-next-line             
 {                      if( value>=8 && value<=32) {
                           setLength(value);
                           setrangeOutput(value);
