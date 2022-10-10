@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef  } from "react";
 import generatePassword from "../password";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
@@ -19,6 +19,20 @@ export default function Textarea() {
     number: false,
     symbol: false,
   });
+  function myFunction(){
+   
+    
+      if (length < 8 || length > 32){
+       
+        setOpen(true);
+        setrangeOutput("")
+        console.log(length);
+      }
+      else{
+        setPassword(generatePassword(length, setting));
+      }
+  
+  }
   function onChange() {
     setLength(document.getElementById("rangeInput").value);
     setrangeOutput(document.getElementById("rangeInput").value);
@@ -60,20 +74,21 @@ export default function Textarea() {
                     max={32}
                     min={8}
                     value={rangeOutput}
+                    
                     onChange={(e) => {
                       setLength(e.target.value);
                       setrangeOutput(e.target.value);
                     }}
                     onBlur={(e) => {
-                      let value = parseInt(e.target.value);
-    // eslint-disable-next-line
-                      {
-                        if (value < 8 || value > 32){
-                          setOpen(true);
-                        }
-                      }
-                      setLength(value);
-                      setrangeOutput(value);
+                      let value = parseInt(e.target.value);                 
+{                      if( value>=8 && value<=32) {
+                          setLength(value);
+                          setrangeOutput(value);
+                          }
+                        else setLength("");
+}
+
+                      
                     }}
                   />
                 </label>
@@ -102,7 +117,7 @@ export default function Textarea() {
               </div>
 
               <button
-                onClick={() => setPassword(generatePassword(length, setting))}
+                onClick={myFunction}
                 type="button"
                 className="btn btn-primary btn-lg"
               >
