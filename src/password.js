@@ -5,7 +5,10 @@ const symbols = `!@#$%^&*`
 
 export default function generatePassword(length , setting){
     let password = '';
-    const listOfTypes = ["al"];
+
+    const listOfTypes = [];
+    if(setting.lowercase === true)
+    listOfTypes.push("al");
     if(setting.upperCase === true)
     listOfTypes.push("up_al");
     if(setting.symbol ===true)
@@ -20,6 +23,7 @@ export default function generatePassword(length , setting){
 
         const type = listOfTypes[Math.floor(Math.random() * listOfTypes.length)];
 
+        console.log(type);
         if(type === "al"){
             password+=pickRandomElement(alpha); 
         }
