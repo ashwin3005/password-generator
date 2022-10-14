@@ -2,7 +2,7 @@ import React from 'react'
 
 const Tips = () => {
     return (
-        <div className="flex-column align-items-center">
+        <div className="flex-column d-flex align-items-center">
             <div className="card text-center">
                 <div className="card-header">
                     <h1 className="text-center">Password tips</h1>

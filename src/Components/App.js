@@ -41,7 +41,7 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className={theme}>
-        <div className="flex-column align-items-center p-5">
+        <div className="flex-column d-flex w-60 align-items-center p-5">
           <ThemeToggle />
           <div className="card text-center">
             <Dialog open={open} onClose={() => setOpen(false)}>
