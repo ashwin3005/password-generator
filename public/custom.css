@@ -40,14 +40,13 @@
 
 .dark #copyTarget {
   background-color: #22303c;
-  color:white;
+  color: white;
 }
 
 /* TOGGLE */
 
 div.toggle {
-  margin-top: 0.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 10px;
   width: 100%;
   display: flex;
   justify-content: flex-end;

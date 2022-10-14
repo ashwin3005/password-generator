@@ -7,7 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 import { ThemeContext } from "./Context/Theme";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material"
 
-export default function Textarea() {
+export default function App() {
   const [theme, setTheme] = useState("light");
   const [password, setPassword] = useState(null);
   const [length, setLength] = useState(8);
@@ -19,19 +19,19 @@ export default function Textarea() {
     number: false,
     symbol: false,
   });
-  function myFunction(){
-   
-    
-      if (length < 8 || length > 32){
-       
-        setOpen(true);
-        setrangeOutput("")
-        console.log(length);
-      }
-      else{
-        setPassword(generatePassword(length, setting));
-      }
-  
+  function myFunction() {
+
+
+    if (length < 8 || length > 32) {
+
+      setOpen(true);
+      setrangeOutput("")
+      console.log(length);
+    }
+    else {
+      setPassword(generatePassword(length, setting));
+    }
+
   }
   function onChange() {
     setLength(document.getElementById("rangeInput").value);
@@ -41,7 +41,7 @@ export default function Textarea() {
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
       <div className={theme}>
-        <div className="container d-flex flex-column h-100 justify-content-center align-items-center">
+        <div className="flex-column align-items-center p-5">
           <ThemeToggle />
           <div className="card text-center">
             <Dialog open={open} onClose={() => setOpen(false)}>
@@ -60,39 +60,41 @@ export default function Textarea() {
             </div>
             <div className="card-body d-flex flex-column justify-content-center align-items-center">
               <div className="d-flex flex-column w-50">
-                <label
-                  className="form-label d-flex flex-row align-items"
-                  htmlFor="customRange1"
-                >
-                  <span>Password Length (8-32) :</span>
-                  &nbsp;&nbsp;&nbsp;
+                <div className="row justify-content-center align-items-center">
+                  <label
+                    className="form-label d-flex h-100 w-100"
+                    htmlFor="customRange1"
+                  >
+                    <span className="w-100">Password Length (8-32) :</span>
+                  </label>
                   <input
-                    className="p-2 text-primary fs-5 font-weight-bold w-25 h-25"
+                    className="text-primary fs-5 font-weight-bold w-50"
                     id="amount"
                     name="amount"
                     type="number"
                     max={32}
                     min={8}
                     value={rangeOutput}
-                    
+
                     onChange={(e) => {
                       setLength(e.target.value);
                       setrangeOutput(e.target.value);
                     }}
                     onBlur={(e) => {
-                      let value = parseInt(e.target.value);    
+                      let value = parseInt(e.target.value);
                       // eslint-disable-next-line             
-{                      if( value>=8 && value<=32) {
+                      {
+                        if (value >= 8 && value <= 32) {
                           setLength(value);
                           setrangeOutput(value);
-                          }
+                        }
                         else setLength("");
-}
+                      }
 
-                      
+
                     }}
                   />
-                </label>
+                </div>
                 <input
                   type="range"
                   id="rangeInput"
