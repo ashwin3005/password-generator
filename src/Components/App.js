@@ -60,15 +60,16 @@ export default function App() {
             </div>
             <div className="card-body d-flex flex-column justify-content-center align-items-center">
               <div className="d-flex flex-column w-50">
-                <div className="row justify-content-center align-items-center">
-                  <label
-                    className="form-label d-flex h-100 w-100"
-                    htmlFor="customRange1"
-                  >
-                    <span className="w-100">Password Length (8-32) :</span>
-                  </label>
+                <div className="d-flex flex-row form-group">
+                <label
+                  className="form-label d-flex flex-column align-items form-col-4"
+                  htmlFor="customRange1"
+                >
+                  <span>Password Length (8-32) :</span>
+                </label>
+
                   <input
-                    className="text-primary fs-5 font-weight-bold w-50"
+                    className="p-2 text-primary flex-column fs-5 font-weight-bold w-25 h-25 form-col-8"
                     id="amount"
                     name="amount"
                     type="number"
@@ -94,7 +95,7 @@ export default function App() {
 
                     }}
                   />
-                </div>
+                  </div>
                 <input
                   type="range"
                   id="rangeInput"
