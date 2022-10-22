@@ -23,20 +23,20 @@ const PasswordDisplay = (props) => {
       <h5 className="d-flex pt-3 flex-column justify-content-center align-items-center">
         Your random password is
       </h5>
-      <div class="input-group input-group-lg p-2">
+      <div className="input-group input-group-lg p-2">
         <input
           type="text"
           id="copyTarget"
-          class="form-control text-primary fs-3 fw-bold font-monospace"
+          className="form-control text-primary fs-3 fw-bold font-monospace"
           value={copied ? "Copied" : props.password}
           ref={(node) => {
             if (node) node.style.setProperty("color", copied? "#05a603":"#0d6efd", "important");
           }}
-          readonly
+          readOnly
         />
         <span
           id="copyButton"
-          class="btn btn-primary d-flex flex-column justify-content-center align-items-center"
+          className="btn btn-primary d-flex flex-column justify-content-center align-items-center"
           title="Click to copy"
           style={{backgroundColor:(copied? "#05a603":"#0d6efd"),borderColor:(copied? "#05a603":"#0d6efd")}}
           onClick={copyToClipboard}
@@ -47,7 +47,7 @@ const PasswordDisplay = (props) => {
               width="30"
               height="30"
               fill="currentColor"
-              class="bi bi-check-lg"
+              className="bi bi-check-lg"
               viewBox="0 0 17 16"
             >
               <path d="M12.736 3.97a.733.733 0 0 1 1.047 0c.286.289.29.756.01 1.05L7.88 12.01a.733.733 0 0 1-1.065.02L3.217 8.384a.757.757 0 0 1 0-1.06.733.733 0 0 1 1.047 0l3.052 3.093 5.4-6.425a.247.247 0 0 1 .02-.022Z" />
