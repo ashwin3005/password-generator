@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import generatePassword from "../password";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
@@ -11,32 +11,47 @@ export default function App() {
   const [theme, setTheme] = useState("light");
   const [password, setPassword] = useState(null);
   const [length, setLength] = useState(8);
-  const [rangeOutput, setrangeOutput] = useState(8);
   const [open, setOpen] = useState(false);
   const [setting, setSetting] = useState({
-    lowercase: true,
-    upperCase: false,
-    number: false,
-    symbol: false,
+    lowercase: {
+      enabled: true,
+      minOccurrence: 0,
+    },
+    upperCase: {
+      enabled: false,
+      minOccurrence: 0,
+    },
+    number: {
+      enabled: false,
+      minOccurrence: 0,
+    },
+    symbol: {
+      enabled: false,
+      minOccurrence: 0,
+    },
   });
   function myFunction() {
-
-
     if (length < 8 || length > 32) {
-
       setOpen(true);
-      setrangeOutput("")
       console.log(length);
     }
     else {
       setPassword(generatePassword(length, setting));
     }
-
   }
-  function onChange() {
-    setLength(document.getElementById("rangeInput").value);
-    setrangeOutput(document.getElementById("rangeInput").value);
-  }
+  const onChange = useCallback((to, d = setting) => {
+    console.log(to)
+    console.log(d)
+    const newLength =
+        Math.max(
+            d.number.minOccurrence +
+            d.symbol.minOccurrence +
+            d.lowercase.minOccurrence +
+            d.upperCase.minOccurrence,
+          to
+        )
+    setLength(newLength);
+  },[setLength, setting])
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -74,24 +89,14 @@ export default function App() {
                     type="number"
                     max={32}
                     min={8}
-                    value={rangeOutput}
+                    value={length}
 
                     onChange={(e) => {
-                      setLength(e.target.value);
-                      setrangeOutput(e.target.value);
+                      onChange(e.target.value);
                     }}
                     onBlur={(e) => {
                       let value = parseInt(e.target.value);
-                      // eslint-disable-next-line             
-                      {
-                        if (value >= 8 && value <= 32) {
-                          setLength(value);
-                          setrangeOutput(value);
-                        }
-                        else setLength("");
-                      }
-
-
+                      onChange(value)
                     }}
                   />
                 </div>
@@ -99,15 +104,14 @@ export default function App() {
                   type="range"
                   id="rangeInput"
                   name="rangeInput"
-                  onChange={onChange}
+                  onChange={(e) => {onChange(e.target.value)}}
                   min="8"
                   max="32"
                   value={length || 8}
                   className="my-3"
-                  oninput="amount.value=rangeInput.value"
                 />
 
-                <CheckBoxes setting={setting} setSetting={setSetting} />
+                <CheckBoxes setting={setting} setSetting={(d) => {setSetting(d); onChange(length, d)}} />
               </div>
               <div className="d-flex flex-column justify-content-center align-items-center">
                 {password == null ? (

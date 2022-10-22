@@ -29,7 +29,7 @@ const PasswordDisplay = (props) => {
           <div contentEditable className="form-control text-primary fs-3 fw-bold font-monospace">
               <span style={{color: "#05a603"}}> Copied </span>
           </div> :
-          <div contentEditable readonly suppressContentEditableWarning class="form-control text-primary fs-3 fw-bold font-monospace" id="copyTarget">
+          <div contentEditable readOnly suppressContentEditableWarning className="form-control text-primary fs-3 fw-bold font-monospace" id="copyTarget">
               <PasswordColorizer password={props.password}/>
           </div>
           }
