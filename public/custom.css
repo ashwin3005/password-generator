@@ -1,16 +1,13 @@
 /* CONTAINERS */
-
 .dark {
-  background-color: #15202b;
   min-height: 100vh;
-}
-
-.dark div {
-  background-color: #15202b;
 }
 
 .card {
   border: solid 1px #8899a6;
+}
+.dark .card{
+  background-color: #2a2a2a;
 }
 
 .dark .card-header {
@@ -18,15 +15,13 @@
   border-bottom: solid 1px #8899a6;
 }
 
-/* TEXT */
-
 .dark h1 {
   color: white;
 }
 
 .dark label,
 .dark h5 {
-  color: #8899a6;
+  color: #c9d0d5;
 }
 
 /* FORM */
@@ -43,11 +38,35 @@
   color: white;
 }
 
-/* TOGGLE */
-
 div.toggle {
-  margin-bottom: 10px;
   width: 100%;
   display: flex;
   justify-content: flex-end;
+}
+
+
+
+.light::before {
+  content: '';
+  background: url('./img/4436009_93190.jpg') no-repeat center center/cover;
+  position: fixed;
+  opacity: 1;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+}
+
+.dark::before {
+  content: '';
+  background: url('./img/4436009_93190.jpg') no-repeat center center/cover;
+  filter: invert(100%);
+  position: fixed;
+  opacity: 1;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
 }
