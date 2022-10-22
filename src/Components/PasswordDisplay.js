@@ -1,5 +1,6 @@
 import React from "react";
 import StrengthChecker from "./StrengthChecker";
+import PasswordColorizer from "./PasswordColorizer";
 const useState = React.useState;
 
 const PasswordDisplay = (props) => {
@@ -24,16 +25,14 @@ const PasswordDisplay = (props) => {
         Your random password is
       </h5>
       <div class="input-group input-group-lg p-2">
-        <input
-          type="text"
-          id="copyTarget"
-          class="form-control text-primary fs-3 fw-bold font-monospace"
-          value={copied ? "Copied" : props.password}
-          ref={(node) => {
-            if (node) node.style.setProperty("color", copied? "#05a603":"#0d6efd", "important");
-          }}
-          readonly
-        />
+          {copied ?
+          <div contentEditable className="form-control text-primary fs-3 fw-bold font-monospace">
+              <span style={{color: "#05a603"}}> Copied </span>
+          </div> :
+          <div contentEditable readonly suppressContentEditableWarning class="form-control text-primary fs-3 fw-bold font-monospace" id="copyTarget">
+              <PasswordColorizer password={props.password}/>
+          </div>
+          }
         <span
           id="copyButton"
           class="btn btn-primary d-flex flex-column justify-content-center align-items-center"

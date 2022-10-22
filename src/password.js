@@ -1,7 +1,7 @@
-const alpha = 'abcdefghijklmnopqrstuvwxyz';
-const upAlpha = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-const num = '0123456789'
-const symbols = `!@#$%^&*`
+export const alphaChars = 'abcdefghijklmnopqrstuvwxyz';
+export const upAlphaChars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+export const numChars = '0123456789'
+export const symbolsChars = `!@#$%^&*`
 
 export default function generatePassword(length , setting){
     let password = '';
@@ -25,16 +25,16 @@ export default function generatePassword(length , setting){
 
         console.log(type);
         if(type === "al"){
-            password+=pickRandomElement(alpha); 
+            password+=pickRandomElement(alphaChars);
         }
         else if(type === "num"){
-            password+=pickRandomElement(num);
+            password+=pickRandomElement(numChars);
         }
         else if(type === "up_al"){
-            password+=pickRandomElement(upAlpha);
+            password+=pickRandomElement(upAlphaChars);
         }
         else if(type === "sym"){
-            password+=pickRandomElement(symbols);
+            password+=pickRandomElement(symbolsChars);
         }
 
 

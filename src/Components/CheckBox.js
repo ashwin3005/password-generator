@@ -5,7 +5,7 @@ const CheckBox = (props) => {
     const newSettings = {...props.setting}
     newSettings[props.id] = event.target.checked;
     props.setSetting(newSettings);
-  }, [props.id, props.setSetting, props.setting])
+  }, [props])
 
     return ( 
     <div className="form-check">
