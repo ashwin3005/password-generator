@@ -17,10 +17,10 @@ const CheckBox = (props) => {
       type="checkbox"
       defaultChecked={checkboxValue}
       value=""
-      id="flexCheckDefault"
+      id={"flexCheckDefault" + props.text}
       onChange={handleChange}
     />
-    <label className="form-check-label" htmlFor="flexCheckDefault">
+    <label className="form-check-label" htmlFor={"flexCheckDefault" + props.text}>
         {props.text}
     </label>
   </div> );
