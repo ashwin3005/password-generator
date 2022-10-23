@@ -19,16 +19,24 @@ export default function App() {
     number: false,
     symbol: false,
   });
+  const [errorMsg, setErrorMsg] = useState("");
   function myFunction() {
 
-
-    if (length < 8 || length > 32) {
-
+    if (length < 8 || length > 32) { // If request is less than 8 characters or more than 32, return an error.
       setOpen(true);
       setrangeOutput("")
-      console.log(length);
-    }
-    else {
+      setPassword(null) // Clear previous password.
+      setErrorMsg('Please enter length between 8-32') // Provides error for error box.
+
+    } else if ((setting.lowercase === false) && (setting.upperCase === false) && (setting.number === false) && (setting.symbol === false)) { // Else if User has not chosen at least 1 of the options.
+      setOpen(true);
+      setrangeOutput("")
+      setPassword(null) // Clear previous password.
+      setErrorMsg('Please choose at least 1 option.') // Provides error for error box.
+
+    } else { // Else user has asked for valid password length using at least 1 option.
+      setPassword(null) // Clear previous password.
+      setErrorMsg('') // Erases previous error.
       setPassword(generatePassword(length, setting));
     }
 
@@ -48,7 +56,7 @@ export default function App() {
               <DialogTitle> Error</DialogTitle>
               <DialogContent>
                 <DialogContentText>
-                  Please enter length between 8-32
+                  {errorMsg}
                 </DialogContentText>
               </DialogContent>
               <DialogActions>
@@ -104,7 +112,7 @@ export default function App() {
                   max="32"
                   value={length || 8}
                   className="my-3"
-                  oninput="amount.value=rangeInput.value"
+                  // oninput="amount.value=rangeInput.value" // This was causing errors so I commented it out. The program seems to work okay without it.
                 />
 
                 <CheckBoxes setting={setting} setSetting={setSetting} />
