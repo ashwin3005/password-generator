@@ -22,9 +22,7 @@ export default function generatePassword(length , setting){
         for(let i=0; i<=length-1; i++){
             // alphabet or number
 
-            let x = Math.floor(randomNumber() * listOfTypes.length)
-            const type = listOfTypes[x];
-            console.log(x)
+            const type = listOfTypes[Math.floor(randomNumber() * listOfTypes.length)];
 
             // console.log("Type: " + type);
             if(type === "al"){
