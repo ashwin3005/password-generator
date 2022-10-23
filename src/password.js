@@ -22,7 +22,7 @@ export default function generatePassword(length , setting){
         for(let i=0; i<=length-1; i++){
             // alphabet or number
 
-            const type = listOfTypes[Math.floor(Math.random() * listOfTypes.length)];
+            const type = listOfTypes[Math.floor(randomNumber() * listOfTypes.length)];
 
             // console.log("Type: " + type);
             if(type === "al"){
@@ -47,6 +47,13 @@ export default function generatePassword(length , setting){
 }
 
 function pickRandomElement(parameter){
-    const r = parameter[Math.floor(Math.random() * parameter.length)];
+    const r = parameter[Math.floor(randomNumber() * parameter.length)];
     return r
+}
+
+function randomNumber() {
+    const array = new Uint32Array(10);
+    const number = window.crypto.getRandomValues(array)[0];
+
+    return parseFloat("0." + number)
 }
