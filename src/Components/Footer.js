@@ -8,45 +8,7 @@ const Footer = () => {
       <footer>
         <div className="container">
           <div className="row">
-            <div className="col-12 col-lg-10 mx-auto">
-              <div className="row">
-                <div className="col-6 col-lg-3">
-                  <h2>Company</h2>
-                  <ul>
-                    <li>
-                      <a href="/">About</a>
-                    </li>
-                    <li>
-                      <a href="/">About</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-6 col-lg-3">
-                  <h2>Support</h2>
-                  <ul>
-                    <li>
-                      <a href="/">About</a>
-                    </li>
-                    <li>
-                      <a href="/">About</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-6 col-lg-3">
-                  <h2>Services</h2>
-                  <ul>
-                    <li>
-                      <a href="/">About</a>
-                    </li>
-                    <li>
-                      <a href="/">About</a>
-                    </li>
-                  </ul>
-                </div>
-
-                <div className="col-6 col-lg-3">
+            <div className="col-2 col-lg-2 mx-auto">
                   <h2>Follow Us</h2>
                   <div className="row">
                     <div className="col-3 mx-auto">
@@ -68,8 +30,7 @@ const Footer = () => {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
+
       </footer>
     </>
   );

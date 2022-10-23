@@ -71,12 +71,18 @@ div.toggle {
   z-index: -1;
 }
 footer {
-  padding: 5rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 0;
   background-color: #182334;
   color: #fff;
 }
 
 footer h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: #fff;
 }
 
@@ -93,18 +99,3 @@ footer li:hover {
   color: var(--primary-color);
 }
 
-footer .fontawesome-style {
-  font-size: 2.3rem;
-  color: var(--primary-color);
-  background-color: transparent;
-  width: 0rem;
-  height: 0rem;
-  margin: 2rem 0;
-  cursor: pointer;
-}
-
-footer .fontawesome-style:hover {
-  transition: all 1s;
-  animation: rotatefont 1s linear infinite alternate-reverse;
-  color: #fff;
-}
