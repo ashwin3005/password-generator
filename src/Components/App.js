@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useCallback, useState} from "react";
 import generatePassword from "../password";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
@@ -11,7 +11,6 @@ export default function App() {
   const [theme, setTheme] = useState("light");
   const [password, setPassword] = useState(null);
   const [length, setLength] = useState(8);
-  const [rangeOutput, setrangeOutput] = useState(8);
   const [open, setOpen] = useState(false);
   const [setting, setSetting] = useState({
     lowercase: true,
@@ -20,31 +19,25 @@ export default function App() {
     symbol: false,
   });
   const [errorMsg, setErrorMsg] = useState("");
-  function myFunction() {
-
+  const generate = useCallback( () => {
     if (length < 8 || length > 32) { // If request is less than 8 characters or more than 32, return an error.
       setOpen(true);
-      setrangeOutput("")
       setPassword(null) // Clear previous password.
       setErrorMsg('Please enter length between 8-32') // Provides error for error box.
-
     } else if ((setting.lowercase === false) && (setting.upperCase === false) && (setting.number === false) && (setting.symbol === false)) { // Else if User has not chosen at least 1 of the options.
       setOpen(true);
-      setrangeOutput("")
       setPassword(null) // Clear previous password.
       setErrorMsg('Please choose at least 1 option.') // Provides error for error box.
-
     } else { // Else user has asked for valid password length using at least 1 option.
       setPassword(null) // Clear previous password.
       setErrorMsg('') // Erases previous error.
       setPassword(generatePassword(length, setting));
     }
+  }, [setPassword, setErrorMsg, setOpen, length, setting])
 
-  }
-  function onChange() {
-    setLength(document.getElementById("rangeInput").value);
-    setrangeOutput(document.getElementById("rangeInput").value);
-  }
+  const onChange = useCallback( (value) => {
+    setLength(value);
+  }, [setLength])
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
@@ -82,24 +75,14 @@ export default function App() {
                     type="number"
                     max={32}
                     min={8}
-                    value={rangeOutput}
+                    value={length}
 
                     onChange={(e) => {
-                      setLength(e.target.value);
-                      setrangeOutput(e.target.value);
+                      onChange(e.target.value);
                     }}
                     onBlur={(e) => {
                       let value = parseInt(e.target.value);
-                      // eslint-disable-next-line             
-                      {
-                        if (value >= 8 && value <= 32) {
-                          setLength(value);
-                          setrangeOutput(value);
-                        }
-                        else setLength("");
-                      }
-
-
+                      onChange(value)
                     }}
                   />
                 </div>
@@ -107,7 +90,7 @@ export default function App() {
                   type="range"
                   id="rangeInput"
                   name="rangeInput"
-                  onChange={onChange}
+                  onChange={(e) => {onChange(e.target.value)}}
                   min="8"
                   max="32"
                   value={length || 8}
@@ -128,7 +111,7 @@ export default function App() {
               </div>
 
               <button
-                onClick={myFunction}
+                onClick={generate}
                 type="button"
                 className="btn btn-primary btn-lg"
               >
