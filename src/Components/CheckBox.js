@@ -1,21 +1,18 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 
 const CheckBox = (props) => {
+  const handleChange = useCallback((event)=>{
+    const newSettings = {...props.setting}
+    newSettings[props.id] = event.target.checked;
+    props.setSetting(newSettings);
+  }, [props])
 
-  const setSetting =  props.setSetting;
-  const setting = props.setting;
-  const id = props.id;
-  const checkboxValue = id==="lowercase"?"true":"";
-  const handleChange = (event)=>{
-    setting[id] = event.target.checked;
-    setSetting(setting);  //why this doesn't do shit
-  }
-    return ( 
+  return (
     <div className="form-check">
     <input
       className="form-check-input"
       type="checkbox"
-      defaultChecked={checkboxValue}
+      defaultChecked={props.setting[props.id] ?? false}
       value=""
       id={"flexCheckDefault" + props.text}
       onChange={handleChange}
