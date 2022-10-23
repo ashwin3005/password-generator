@@ -52,7 +52,7 @@ function pickRandomElement(parameter){
 }
 
 function randomNumber() {
-    const array = new Uint32Array(10);
+    const array = new Uint32Array(1);
     const number = window.crypto.getRandomValues(array)[0];
 
     return parseFloat("0." + number)
