@@ -8,16 +8,16 @@ const Footer = () => {
       <footer>
         <div className="container">
           <div className="row">
-            <div className="col-2 col-lg-2 mx-auto">
+            <div className="col-10 col-lg-3  mx-auto">
                   <h2>Follow Us</h2>
                   <div className="row">
-                    <div className="col-3 mx-auto">
+                    <div className="col-3 col-lg-3 mx-auto">
                     <img className="align-self-start mr-3" src={img1} alt="fb"></img>
                     </div>
-                    <div className="col-3 mx-auto">
+                    <div className="col-3 col-lg-3 mx-auto">
                         <img className="align-self-start mr-3" src={img2} alt="insta"></img>
                     </div>
-                    <div className="col-3 mx-auto">
+                    <div className="col-3 col-lg-3 mx-auto">
                     <img className="align-self-start mr-3" src={img3} alt="insta"></img>
                     </div>
                   </div>

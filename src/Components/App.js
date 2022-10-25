@@ -6,7 +6,7 @@ import Tips from "./Tips";
 import ThemeToggle from "./ThemeToggle";
 import { ThemeContext } from "./Context/Theme";
 import { Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle } from "@mui/material"
-import Navbar from "./Navbar";
+// import Navbar from "./Navbar";
 import Footer from "./Footer";
 
 export default function App() {
@@ -50,7 +50,7 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <Navbar></Navbar>
+      {/* <Navbar></Navbar> */}
       <div className={theme}>
         <div className="flex-column d-flex w-60 align-items-center p-5">
           <ThemeToggle />
