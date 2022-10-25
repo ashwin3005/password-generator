@@ -9,11 +9,15 @@ Site link: [create-your-password.netlify.app](https://create-your-password.netli
 ```sh
 git clone https://github.com/[YOUR-USERNAME]/password-generator.git
 ```
-3. ReactJs Installation (Make sure you already installed Node)
+3. Navigate into the project directory
+```sh
+cd password-generator
+```
+4. ReactJs Installation (Make sure you already installed Node)
 ```sh
 npm install
 ```
-4. Run the program
+5. Run the program
 ```sh
 npm run start
 ```
