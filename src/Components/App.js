@@ -1,5 +1,6 @@
 import React, { useCallback, useState } from "react";
 import generatePassword from "../password";
+import { usePersistedState } from "../hooks/usePersistedState";
 import PasswordDisplay from "./PasswordDisplay";
 import CheckBoxes from "./CheckBoxes";
 import Tips from "./Tips";
@@ -15,7 +16,10 @@ import {
 } from "@mui/material";
 
 export default function App() {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = usePersistedState(
+    "@password-generator/theme",
+    "light"
+  );
   const [password, setPassword] = useState(null);
   const [length, setLength] = useState(4);
   const [open, setOpen] = useState(false);
