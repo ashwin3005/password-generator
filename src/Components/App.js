@@ -17,7 +17,7 @@ import {
 export default function App() {
   const [theme, setTheme] = useState("light");
   const [password, setPassword] = useState(null);
-  const [length, setLength] = useState(4);
+  const [length, setLength] = useState(8);
   const [open, setOpen] = useState(false);
   const [setting, setSetting] = useState({
     lowercase: true,
