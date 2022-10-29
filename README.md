@@ -1,5 +1,5 @@
 # password-generator 
-> Simple password generator made with reactJS and Bootstrap 5. Generates combination of lowercase, uppercase, numbers, and symbols with length range from 8 to 32 as your choice.
+> Simple password generator made with reactJS and Bootstrap 5. Generates combination of lowercase, uppercase, numbers, and symbols with length range from 4 to 32 as your choice.
 
 Site link: [create-your-password.netlify.app](https://create-your-password.netlify.app)
 
