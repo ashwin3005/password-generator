@@ -145,6 +145,9 @@ export default function App() {
           <Tips />
         </div>
       </div>
+      <div>
+        <a href="https://github.com/ashwin3005/password-generator" className="d-flex justify-content-center m-xl">contribute</a><br/><br/>
+      </div>
     </ThemeContext.Provider>
   );
 }
