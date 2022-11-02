@@ -63,7 +63,7 @@ export default function App() {
 
   return (
     <ThemeContext.Provider value={{ theme, setTheme }}>
-      <div className={theme}>
+      <div className={`${theme} mb-5`} >
         <div className="flex-column d-flex w-60 align-items-center p-5">
           <ThemeToggle />
           <div className="card text-center">
