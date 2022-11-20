@@ -14,6 +14,7 @@ import {
   DialogContentText,
   DialogTitle,
 } from "@mui/material";
+// import Button from 'react-bootstrap/Button';
 
 export default function App() {
   const [theme, setTheme] = usePersistedState(
@@ -116,7 +117,7 @@ export default function App() {
                   max="32"
                   value={length || 4}
                   className="my-3"
-                  // oninput="amount.value=rangeInput.value" // This was causing errors so I commented it out. The program seems to work okay without it.
+                // oninput="amount.value=rangeInput.value" // This was causing errors so I commented it out. The program seems to work okay without it.
                 />
 
                 <CheckBoxes setting={setting} setSetting={setSetting} />
@@ -145,8 +146,8 @@ export default function App() {
           <Tips />
         </div>
       </div>
-      <div>
-        <a href="https://github.com/ashwin3005/password-generator" className="d-flex justify-content-center m-xl">contribute</a><br/><br/>
+      <div className="text-center"> 
+        <a href="https://github.com/ashwin3005/password-generator" class="btn btn-success" role="button" >Contribute</a>
       </div>
     </ThemeContext.Provider>
   );
