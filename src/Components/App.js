@@ -146,7 +146,7 @@ export default function App() {
           <Tips />
         </div>
       </div>
-      <div className="text-center p-5" > 
+      <div className="text-center p-5" > {/*padding 5*/}
         <a href="https://github.com/ashwin3005/password-generator" class="btn btn-success" role="button" >Contribute</a>
       </div>
     </ThemeContext.Provider>
